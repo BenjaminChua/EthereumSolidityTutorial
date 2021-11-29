@@ -21,6 +21,7 @@ const deploy = async () => {
       from: accounts[0]
     });
 
+  console.log(JSON.stringify(abi));
   console.log(`Contract deployed to ${result.options.address}`);
 
   provider.engine.stop();

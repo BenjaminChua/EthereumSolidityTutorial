@@ -99,6 +99,10 @@ describe('Lottery Contract', () => {
       from: accounts[0]
     });
 
+    const winner = await lottery.methods.getWinner().call();
+
+    assert(winner == accounts[1]);
+
     const finalBalance = await web3.eth.getBalance(accounts[1]);
 
     const diff = finalBalance - initialBalance;
