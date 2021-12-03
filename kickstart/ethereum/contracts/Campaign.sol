@@ -95,4 +95,24 @@ contract Campaign {
         // set request to have issued payment
         request.paymentIssued = true;
     }
+
+    function getSummary()
+        external
+        view
+        returns (
+            uint256,
+            uint256,
+            uint256,
+            uint256,
+            address
+        )
+    {
+        return (
+            minimumContribution,
+            address(this).balance,
+            numRequests,
+            numContributors,
+            manager
+        );
+    }
 }

@@ -118,6 +118,6 @@ describe('Campaigns', () => {
     let currBalance = await web3.eth.getBalance(sampleRequest['recipient']);
     currBalance = parseInt(currBalance);
 
-    assert.equal(sampleRequest['value'], currBalance - prevBalance);
+    assert.strictEqual(parseInt(sampleRequest['value']), currBalance - prevBalance);
   });
 });
